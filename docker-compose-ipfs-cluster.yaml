@@ -1,0 +1,18 @@
+version: '3'
+services:
+  peer-1:
+    image: ipfs/ipfs-cluster
+    ports:
+      - 8080:8080
+      - 4001:4001
+      - 5001:5001
+    volumes:
+      - ./cluster/peer1/config:/data/ipfs-cluster
+  peer-2:
+    image: ipfs/ipfs-cluster
+    ports:
+      - 8081:8080
+      - 4002:4001
+      - 5002:5001
+    volumes:
+      - ./cluster/peer2/config:/data/ipfs-cluster
